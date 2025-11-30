@@ -194,3 +194,211 @@
   color: #006400;
   text-align: center;
 }
+
+/* -------- Profile Setup screen -------- */
+
+.profile-card {
+  width: 480px;
+}
+
+.profile-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #002b5c;
+}
+
+.profile-form {
+  font-size: 0.95rem;
+}
+
+.profile-group {
+  margin-bottom: 1rem;
+}
+
+.profile-label {
+  display: block;
+  font-weight: 500;
+  color: #222;
+}
+
+.profile-input,
+.profile-select,
+.profile-textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #b8b8b8;
+  font-size: 0.9rem;
+}
+
+.profile-select {
+  width: 200px;
+  margin-left: 10px;
+}
+
+.profile-textarea {
+  resize: vertical;
+}
+
+.profile-input:focus,
+.profile-select:focus,
+.profile-textarea:focus {
+  outline: none;
+  border-color: #002b5c;
+  box-shadow: 0 0 0 2px rgba(0, 43, 92, 0.2);
+}
+
+.profile-submit-row {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.profile-submit-btn {
+  background: #f9b000;
+  color: #002b5c;
+  border: none;
+  padding: 0.55rem 1.6rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-submit-btn:hover {
+  background: #ffc94f;
+}
+
+.profile-error {
+  color: darkred;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.profile-saved {
+  color: #006400;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* -------- Professor Feedback screen (professor view) -------- */
+
+.prof-card {
+  width: 780px;
+}
+
+.prof-title {
+  font-size: 1.7rem;
+  margin: 0 0 0.25rem;
+  color: #002b5c;
+}
+
+.prof-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.prof-divider {
+  margin: 1rem 0 1.25rem;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.prof-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+/* left summary */
+
+.prof-summary {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  background: #fafafa;
+}
+
+.prof-summary-title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.prof-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.prof-summary-value {
+  display: inline-block;
+  min-width: 120px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  background: #fff;
+  text-align: right;
+}
+
+/* right detail panel */
+
+.prof-detail {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.75rem 0.75rem 1rem;
+  background: #fafafa;
+}
+
+/* tabs */
+
+.prof-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.prof-tab-btn {
+  flex: 1;
+  padding: 0.35rem 0;
+  border: 1px solid #bbb;
+  border-radius: 4px 4px 0 0;
+  background: #eaeaea;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.prof-tab-btn-active {
+  background: #cfe2ff;
+  border-bottom-color: #cfe2ff;
+  font-weight: 600;
+}
+
+/* responses box */
+
+.prof-responses-box {
+  border: 1px solid #bbb;
+  border-radius: 0 4px 4px 4px;
+  background: #fff;
+  min-height: 180px;
+  padding: 0.75rem;
+  overflow-y: auto;
+}
+
+.prof-responses-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.prof-responses-list li {
+  margin-bottom: 0.35rem;
+}
+
+.prof-no-responses {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}

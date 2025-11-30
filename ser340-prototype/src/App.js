@@ -1,16 +1,16 @@
-import React from "react";
-import "./App.css";
-import Login from "./screens/Login";
+// import React from "react";
+// import "./App.css";
+// import Login from "./screens/Login";
 
-function App() {
-  return (
-    <div>
-      <Login />
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <Login />
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
 // FOR TESTING OTHER SCREENS
 // import React from "react";
@@ -26,3 +26,31 @@ export default App;
 // }
 
 // export default App;
+
+// import React from "react";
+// import "./App.css";
+// import Profile from "./screens/Profile";
+
+// function App() {
+//   return (
+//     <div>
+//       <Profile />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from "react";
+import "./App.css";
+import ProfessorFeedback from "./screens/ProfessorFeedback";
+
+function App() {
+  return (
+    <div>
+      <ProfessorFeedback />
+    </div>
+  );
+}
+
+export default App;
