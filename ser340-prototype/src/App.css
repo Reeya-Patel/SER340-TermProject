@@ -402,3 +402,384 @@
   font-size: 0.9rem;
   color: #555;
 }
+
+/* -------- Course Dashboard Screen -------- */
+
+.dashboard-container {
+  min-height: 100vh;
+  background: #f5f5f7;
+  padding: 3rem 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Header Section */
+.dashboard-header {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-welcome {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #002b5c;
+  margin: 0;
+}
+
+.dashboard-profile-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #002b5c;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-profile-btn:hover {
+  background: #002b5c;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-profile-icon {
+  font-size: 1.8rem;
+}
+
+.dashboard-profile-btn:hover .dashboard-profile-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Courses Grid */
+.dashboard-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Course Card */
+.dashboard-course-card {
+  background: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  padding: 2rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  border-color: #b0b0b0;
+}
+
+.dashboard-course-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #002b5c;
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+}
+
+.dashboard-course-code {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0 0 0.4rem;
+}
+
+.dashboard-course-instructor {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-container {
+    padding: 2rem 1rem;
+  }
+
+  .dashboard-courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dashboard-welcome {
+    font-size: 1.4rem;
+  }
+
+  .dashboard-profile-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* -------- Lessons Screen -------- */
+
+.lessons-container {
+  min-height: 100vh;
+  background: #f5f5f7;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Course Header */
+.lessons-course-header {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+}
+
+.lessons-course-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #002b5c;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Main Layout */
+.lessons-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Calendar Section */
+.lessons-calendar {
+  background: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+}
+
+.lessons-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.lessons-month-nav {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #002b5c;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s;
+}
+
+.lessons-month-nav:hover {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.lessons-month-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #002b5c;
+}
+
+/* Calendar Grid */
+.lessons-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.lessons-weekday {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #002b5c;
+  padding: 0.5rem 0;
+}
+
+.lessons-calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.lessons-calendar-day:hover:not(.empty) {
+  background: #f0f0f0;
+}
+
+.lessons-calendar-day.empty {
+  cursor: default;
+  color: #ccc;
+}
+
+.lessons-calendar-day.selected {
+  background: #4a90e2;
+  color: white;
+  font-weight: 600;
+}
+
+.lessons-calendar-day.current-week {
+  background: #fff3cd;
+  font-weight: 600;
+  border: 2px solid #f9b000;
+}
+
+.lessons-calendar-day.selected.current-week {
+  background: #4a90e2;
+  border: 2px solid #f9b000;
+}
+
+/* Lessons List Section */
+.lessons-list {
+  background: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.lessons-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  background: white;
+  transition: all 0.2s;
+}
+
+.lessons-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.lessons-list-item:hover {
+  border-color: #b0b0b0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.lessons-list-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #002b5c;
+}
+
+.lessons-feedback-btn {
+  padding: 0.5rem 1.25rem;
+  background: white;
+  border: 1px solid #002b5c;
+  color: #002b5c;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lessons-feedback-btn:hover {
+  background: #002b5c;
+  color: white;
+}
+
+/* Empty State */
+.lessons-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #666;
+}
+
+.lessons-empty-state p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.lessons-empty-hint {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Scrollbar Styling */
+.lessons-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lessons-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.lessons-list::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 4px;
+}
+
+.lessons-list::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .lessons-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .lessons-calendar {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .lessons-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .lessons-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .lessons-feedback-btn {
+    width: 100%;
+  }
+}
+
+
