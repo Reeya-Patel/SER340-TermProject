@@ -1,41 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [role, setRole] = useState("None");
   const [department, setDepartment] = useState("None");
   const [bio, setBio] = useState("");
+
   const [error, setError] = useState("");
   const [saved, setSaved] = useState(false);
+
+  // load saved profile on mount
+  useEffect(() => {
+    const stored = localStorage.getItem("userProfile");
+    if (stored) {
+      const p = JSON.parse(stored);
+      setName(p.name || "");
+      setRole(p.role || "None");
+      setDepartment(p.department || "None");
+      setBio(p.bio || "");
+    }
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
     setError("");
     setSaved(false);
 
-    if (!name) {
-      setError("Please enter your name.");
-      return;
-    }
+    if (!name) return setError("Please enter your name.");
+    if (role === "None") return setError("Please select a role.");
+    if (department === "None") return setError("Please select a department.");
 
-    if (role === "None") {
-      setError("Please select a role.");
-      return;
-    }
-
-    if (department === "None") {
-      setError("Please select a department.");
-      return;
-    }
+    const profileData = { name, role, department, bio };
+    localStorage.setItem("userProfile", JSON.stringify(profileData));
 
     setSaved(true);
 
-    console.log({
-      name,
-      role,
-      department,
-      bio,
-    });
+    // redirect based on role
+    if (role === "Student") navigate("/dashboard");
+    else navigate("/professor");
   }
 
   return (
@@ -44,7 +49,6 @@ function Profile() {
         <h1 className="profile-title">Profile Setup</h1>
 
         <form onSubmit={handleSubmit} className="profile-form">
-          {/* NAME */}
           <div className="profile-group">
             <label className="profile-label">
               Name:
@@ -57,7 +61,6 @@ function Profile() {
             </label>
           </div>
 
-          {/* ROLE */}
           <div className="profile-group">
             <label className="profile-label">
               Role:
@@ -73,7 +76,6 @@ function Profile() {
             </label>
           </div>
 
-          {/* DEPARTMENT */}
           <div className="profile-group">
             <label className="profile-label">
               Department:
@@ -84,7 +86,6 @@ function Profile() {
               >
                 <option value="None">None</option>
 
-                {/* QU Academic Departments */}
                 <option value="Biology">Biology</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Mathematics">Mathematics</option>
@@ -120,7 +121,6 @@ function Profile() {
             </label>
           </div>
 
-          {/* BIO */}
           <div className="profile-group">
             <label className="profile-label">
               Biography:
@@ -133,13 +133,9 @@ function Profile() {
             </label>
           </div>
 
-          {/* ERRORS */}
           {error && <p className="profile-error">{error}</p>}
-          {saved && (
-            <p className="profile-saved">Profile saved successfully.</p>
-          )}
+          {saved && <p className="profile-saved">Profile saved!</p>}
 
-          {/* BUTTON */}
           <div className="profile-submit-row">
             <button type="submit" className="profile-submit-btn">
               Save Profile

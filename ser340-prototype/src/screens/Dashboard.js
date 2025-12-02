@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Dashboard() {
-  // Mock user data - in real app, would come from auth context
-  const [userName, setUserName] = useState("John Smith");
+  const [userName, setUserName] = useState("");
 
-  // Course data - would normally come from API based on user email
+  useEffect(() => {
+    // pull the saved profile
+    const storedProfile = localStorage.getItem("userProfile");
+
+    if (storedProfile) {
+      const profile = JSON.parse(storedProfile);
+      setUserName(profile.name || "");
+    }
+  }, []);
+
+  // Course data
   const [courses] = useState([
     {
       id: 1,
@@ -24,12 +33,7 @@ function Dashboard() {
       name: "Introduction to Programming",
       instructor: "Dr. Martinez",
     },
-    {
-      id: 4,
-      code: "MA237",
-      name: "Linear Algebra",
-      instructor: "Dr. Chen",
-    },
+    { id: 4, code: "MA237", name: "Linear Algebra", instructor: "Dr. Chen" },
     {
       id: 5,
       code: "CS220",
@@ -46,21 +50,31 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      {/* Header Section */}
+      {/* Header */}
       <div className="dashboard-header">
-        <div className="dashboard-welcome">Welcome ({userName})!</div>
-        <button className="dashboard-profile-btn">
+        <div className="dashboard-welcome">Welcome {userName}!</div>
+
+        <button
+          className="dashboard-profile-btn"
+          onClick={() => (window.location.href = "/profile")}
+        >
           <span className="dashboard-profile-icon">👤</span>
         </button>
       </div>
 
-      {/* Courses Grid */}
+      {/* Courses */}
       <div className="dashboard-courses-grid">
         {courses.map((course) => (
-          <div key={course.id} className="dashboard-course-card">
+          <div
+            key={course.id}
+            className="dashboard-course-card"
+            onClick={() => (window.location.href = "/lessons")}
+          >
             <div className="dashboard-course-name">{course.name}</div>
             <div className="dashboard-course-code">{course.code}</div>
-            <div className="dashboard-course-instructor">{course.instructor}</div>
+            <div className="dashboard-course-instructor">
+              {course.instructor}
+            </div>
           </div>
         ))}
       </div>

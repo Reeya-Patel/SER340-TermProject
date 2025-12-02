@@ -859,3 +859,44 @@
   font-size: 0.85rem;
   margin-top: 0.25rem;
 }
+
+/* ---- First-Time User --- */
+
+.login-first-time-row {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #002b5c;
+}
+
+.login-first-time-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.login-temp-password {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.login-temp-password-value {
+  font-weight: 600;
+  color: #002b5c;
+}
+
+.reset-back-btn {
+  background: #e6e6e6;
+  color: #002b5c;
+  border: none;
+  padding: 0.55rem 1.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reset-back-btn:hover {
+  background: #cccccc;
+}
