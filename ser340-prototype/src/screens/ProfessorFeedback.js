@@ -2,52 +2,44 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function ProfessorFeedback() {
-  const [selectedQuestion, setSelectedQuestion] = useState("Q1");
   const navigate = useNavigate();
 
-  // dummy summary values – will be replace with real data eventually
+  // summary stays the same (left column)
   const summary = {
     responses: 18,
     comprehension: "4.2 / 5",
     pace: "Just Right",
   };
 
-  const responsesByQuestion = {
-    Q1: [
-      "The examples helped me understand the concept.",
-      "Some parts felt rushed, but overall it was clear.",
-    ],
-    Q2: [
-      "The pace was just right.",
-      "I would have liked a bit more time on the last topic.",
-    ],
-    Q3: [
-      "More practice problems would help.",
-      "Maybe add a quick recap at the end of class.",
-    ],
-  };
-
-  const responses = responsesByQuestion[selectedQuestion];
+  // RIGHT SIDE: All feedback comments (no tabs)
+  const allFeedback = [
+    "The examples helped me understand the concept.",
+    "Some parts felt rushed, but overall it was clear.",
+    "The pace was just right.",
+    "I would have liked a bit more time on the last topic.",
+    "More practice problems would help.",
+    "Maybe add a quick recap at the end of class.",
+  ];
 
   return (
     <div className="login-container">
       <div className="login-card prof-card">
-        {/*  back button */}
+        {/* back button */}
         <button
           type="button"
           className="feedback-back-btn"
-          onClick={() => navigate(-1)} // go back to last screen
+          onClick={() => navigate(-1)}
         >
           ← Back to course
         </button>
 
-        {/* Course header */}
+        {/* header */}
         <h1 className="prof-title">Course Name</h1>
         <p className="prof-subtitle">Course Code</p>
         <hr className="prof-divider" />
 
         <div className="prof-layout">
-          {/* to the left: summary panel */}
+          {/* LEFT SIDE — summary box stays the same */}
           <div className="prof-summary">
             <h2 className="prof-summary-title">Summary</h2>
 
@@ -69,35 +61,19 @@ function ProfessorFeedback() {
             </div>
           </div>
 
-          {/* to the right: question tabs + responses */}
+          {/* RIGHT SIDE — ONLY FEEDBACK COMMENTS */}
           <div className="prof-detail">
-            <div className="prof-tabs">
-              {["Q1", "Q2", "Q3"].map((q) => (
-                <button
-                  key={q}
-                  type="button"
-                  className={
-                    "prof-tab-btn" +
-                    (selectedQuestion === q ? " prof-tab-btn-active" : "")
-                  }
-                  onClick={() => setSelectedQuestion(q)}
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
+            <h2 className="prof-summary-title">Feedback Comments</h2>
 
             <div className="prof-responses-box">
-              {responses && responses.length > 0 ? (
+              {allFeedback.length > 0 ? (
                 <ul className="prof-responses-list">
-                  {responses.map((text, index) => (
+                  {allFeedback.map((text, index) => (
                     <li key={index}>{text}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="prof-no-responses">
-                  No responses recorded for this question yet.
-                </p>
+                <p className="prof-no-responses">No feedback comments yet.</p>
               )}
             </div>
           </div>
