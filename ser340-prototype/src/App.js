@@ -42,21 +42,21 @@
 // export default App;
 
 // FOR TESTING LESSONS
-import React from "react";
-import "./App.css";
-import Lessons from "./screens/Lessons";
+// import React from "react";
+// import "./App.css";
+// import Lessons from "./screens/Lessons";
 
-function App() {
-  return (
-    <div>
-      <Lessons />
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <Lessons />
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
-// FOR TESTING DASHBOARD
+//FOR TESTING DASHBOARD
 // import React from "react";
 // import "./App.css";
 // import Dashboard from "./screens/Dashboard";
@@ -130,3 +130,17 @@ export default App;
 // }
 
 // export default App;
+
+import React from "react";
+import "./App.css";
+import PasswordReset from "./screens/PasswordReset";
+
+function App() {
+  return (
+    <div>
+      <PasswordReset />
+    </div>
+  );
+}
+
+export default App;

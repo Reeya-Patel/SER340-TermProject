@@ -782,4 +782,80 @@
   }
 }
 
+/* -------- Change Password screen -------- */
 
+.reset-card {
+  width: 480px;
+}
+
+.reset-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #002b5c;
+}
+
+.reset-form {
+  font-size: 0.95rem;
+}
+
+.reset-group {
+  margin-bottom: 1rem;
+}
+
+.reset-label {
+  display: block;
+  font-weight: 500;
+  color: #222;
+}
+
+.reset-input {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #b8b8b8;
+  font-size: 0.9rem;
+}
+
+.reset-input:focus {
+  outline: none;
+  border-color: #002b5c;
+  box-shadow: 0 0 0 2px rgba(0, 43, 92, 0.2);
+}
+
+.reset-divider {
+  margin: 1rem 0 1rem;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.reset-submit-row {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.reset-submit-btn {
+  background: #f9b000;
+  color: #002b5c;
+  border: none;
+  padding: 0.55rem 1.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reset-submit-btn:hover {
+  background: #ffc94f;
+}
+
+.reset-error {
+  color: darkred;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.reset-saved {
+  color: #006400;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
