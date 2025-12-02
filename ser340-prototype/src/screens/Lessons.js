@@ -269,30 +269,40 @@ function Lessons() {
         <div className="lessons-list">
           {selectedDate ? (
             displayedLessons.length > 0 ? (
-              displayedLessons.map((lesson) => (
-                <div key={lesson.id} className="lessons-list-item">
-                  <span className="lessons-list-title">{lesson.title}</span>
+              displayedLessons.map((lesson) => {
+                const isLocked = lesson.week > currentWeek;
+                return (
+                  <div key={lesson.id} className={`lessons-list-item ${isLocked ? 'locked' : ''}`}>
+                    <span className="lessons-list-title">
+                      {isLocked && <span className="lock-icon">🔒 </span>}
+                      {lesson.title}
+                    </span>
 
-                  {/* 🔹 Button varies by role */}
-                  {role === "Student" && (
-                    <button
-                      className="lessons-feedback-btn"
-                      onClick={() => handleLeaveFeedback(lesson)}
-                    >
-                      Leave Feedback
-                    </button>
-                  )}
+                    {/* 🔹 Button varies by role */}
+                    {role === "Student" && (
+                      <button
+                        className="lessons-feedback-btn"
+                        onClick={() => handleLeaveFeedback(lesson)}
+                        disabled={isLocked}
+                        title={isLocked ? "This lesson hasn't happened yet" : ""}
+                      >
+                        Leave Feedback
+                      </button>
+                    )}
 
-                  {role === "Professor" && (
-                    <button
-                      className="lessons-feedback-btn"
-                      onClick={() => handleViewFeedback(lesson)}
-                    >
-                      View Feedback
-                    </button>
-                  )}
-                </div>
-              ))
+                    {role === "Professor" && (
+                      <button
+                        className="lessons-feedback-btn"
+                        onClick={() => handleViewFeedback(lesson)}
+                        disabled={isLocked}
+                        title={isLocked ? "This lesson hasn't happened yet" : ""}
+                      >
+                        View Feedback
+                      </button>
+                    )}
+                  </div>
+                );
+              })
             ) : (
               <div className="lessons-empty-state">
                 <p>No lessons scheduled for this date.</p>
