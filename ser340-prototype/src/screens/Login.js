@@ -30,6 +30,7 @@ function Login() {
   }
 
   function handleLogin(e) {
+    localStorage.clear();
     e.preventDefault();
     setError("");
 
@@ -45,15 +46,36 @@ function Login() {
       return;
     }
 
-    // NOTE: in a real app we'd check password against a backend.
-    // For this prototype we just branch based on first-time vs returning.
-
+    // FIRST-TIME USERS → go change password
     if (isFirstTime) {
-      // first-time users go to change password screen
       navigate("/reset", { state: { email } });
-    } else {
-      // returning users go to the dashboard
-      navigate("/dashboard");
+      return;
+    }
+
+    // RETURNING USERS:
+    // check if profile exists
+    const storedProfile = localStorage.getItem("userProfile");
+
+    if (!storedProfile) {
+      // no profile set yet → force them to profile setup
+      navigate("/profile");
+      return;
+    }
+
+    try {
+      const profile = JSON.parse(storedProfile);
+      const role = profile.role;
+
+      // route based on saved role
+      if (role === "Professor") {
+        navigate("/professor");
+      } else {
+        // default to student dashboard
+        navigate("/dashboard");
+      }
+    } catch (err) {
+      // if something is weird with localStorage, just send them to profile
+      navigate("/profile");
     }
   }
 

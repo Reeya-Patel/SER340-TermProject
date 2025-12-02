@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProfessorFeedback() {
   const [selectedQuestion, setSelectedQuestion] = useState("Q1");
+  const navigate = useNavigate(); // ✅ new
 
   // dummy summary values – you can replace with real data later
   const summary = {
@@ -30,6 +32,15 @@ function ProfessorFeedback() {
   return (
     <div className="login-container">
       <div className="login-card prof-card">
+        {/* ✅ BACK BUTTON */}
+        <button
+          type="button"
+          className="feedback-back-btn"
+          onClick={() => navigate(-1)} // go back to last screen
+        >
+          ← Back to course
+        </button>
+
         {/* Course header */}
         <h1 className="prof-title">Course Name</h1>
         <p className="prof-subtitle">Course Code</p>

@@ -36,6 +36,9 @@ function Profile() {
     const profileData = { name, role, department, bio };
     localStorage.setItem("userProfile", JSON.stringify(profileData));
 
+    // ✅ mark profile as completed
+    localStorage.setItem("profileCompleted", "true");
+
     setSaved(true);
 
     // redirect based on role
@@ -46,6 +49,15 @@ function Profile() {
   return (
     <div className="login-container">
       <div className="login-card profile-card">
+        {/* back button */}
+        <button
+          type="button"
+          className="feedback-back-btn"
+          onClick={() => navigate("/dashboard")}
+        >
+          ← Back to Dashboard
+        </button>
+
         <h1 className="profile-title">Profile Setup</h1>
 
         <form onSubmit={handleSubmit} className="profile-form">
@@ -85,7 +97,6 @@ function Profile() {
                 onChange={(e) => setDepartment(e.target.value)}
               >
                 <option value="None">None</option>
-
                 <option value="Biology">Biology</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Mathematics">Mathematics</option>

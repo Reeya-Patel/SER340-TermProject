@@ -900,3 +900,17 @@
 .reset-back-btn:hover {
   background: #cccccc;
 }
+
+.back-button {
+  background: none;
+  border: none;
+  color: #1c355e;
+  font-size: 16px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 5px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}

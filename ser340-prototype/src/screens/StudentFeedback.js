@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function StudentFeedback() {
   const [understanding, setUnderstanding] = useState("None");
   const [pace, setPace] = useState("");
   const [improvement, setImprovement] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  const navigate = useNavigate(); // ✅ new
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -14,6 +17,15 @@ function StudentFeedback() {
   return (
     <div className="login-container">
       <div className="login-card feedback-card">
+        {/* ✅ BACK BUTTON INSIDE CARD, ABOVE TITLE */}
+        <button
+          type="button"
+          className="feedback-back-btn"
+          onClick={() => navigate(-1)} // go to last page (not login)
+        >
+          ← Back to course
+        </button>
+
         <h1 className="feedback-title">Course Name</h1>
         <p className="feedback-subtitle">Course Code</p>
         <hr className="feedback-divider" />
