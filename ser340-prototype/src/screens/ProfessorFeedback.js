@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 function ProfessorFeedback() {
   const [selectedQuestion, setSelectedQuestion] = useState("Q1");
-  const navigate = useNavigate(); // ✅ new
+  const navigate = useNavigate();
 
-  // dummy summary values – you can replace with real data later
+  // dummy summary values – will be replace with real data eventually
   const summary = {
     responses: 18,
     comprehension: "4.2 / 5",
@@ -32,7 +32,7 @@ function ProfessorFeedback() {
   return (
     <div className="login-container">
       <div className="login-card prof-card">
-        {/* ✅ BACK BUTTON */}
+        {/*  back button */}
         <button
           type="button"
           className="feedback-back-btn"
@@ -47,7 +47,7 @@ function ProfessorFeedback() {
         <hr className="prof-divider" />
 
         <div className="prof-layout">
-          {/* LEFT: summary panel */}
+          {/* to the left: summary panel */}
           <div className="prof-summary">
             <h2 className="prof-summary-title">Summary</h2>
 
@@ -69,7 +69,7 @@ function ProfessorFeedback() {
             </div>
           </div>
 
-          {/* RIGHT: question tabs + responses */}
+          {/* to the right: question tabs + responses */}
           <div className="prof-detail">
             <div className="prof-tabs">
               {["Q1", "Q2", "Q3"].map((q) => (

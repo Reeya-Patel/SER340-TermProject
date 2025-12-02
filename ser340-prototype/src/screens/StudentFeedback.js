@@ -7,7 +7,7 @@ function StudentFeedback() {
   const [improvement, setImprovement] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const navigate = useNavigate(); // ✅ new
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,7 +17,7 @@ function StudentFeedback() {
   return (
     <div className="login-container">
       <div className="login-card feedback-card">
-        {/* ✅ BACK BUTTON INSIDE CARD, ABOVE TITLE */}
+        {/*  back button */}
         <button
           type="button"
           className="feedback-back-btn"
