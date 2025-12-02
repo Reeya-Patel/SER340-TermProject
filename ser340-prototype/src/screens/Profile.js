@@ -36,14 +36,12 @@ function Profile() {
     const profileData = { name, role, department, bio };
     localStorage.setItem("userProfile", JSON.stringify(profileData));
 
-    // ✅ mark profile as completed
+    // mark profile as completed
     localStorage.setItem("profileCompleted", "true");
 
     setSaved(true);
 
-    // redirect based on role
-    if (role === "Student") navigate("/dashboard");
-    else navigate("/professor");
+    navigate("/dashboard");
   }
 
   return (

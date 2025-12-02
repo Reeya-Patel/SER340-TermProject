@@ -1,7 +1,7 @@
 // Lessons.js
 // Shows calendar + lessons for one course and links to feedback screen.
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Lessons() {
@@ -12,6 +12,21 @@ function Lessons() {
   const [courseName] = useState(
     location.state?.courseName || "Software Engineering"
   );
+
+  // 🔹 role from profile (Student / Professor)
+  const [role, setRole] = useState(null);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("userProfile");
+    if (stored) {
+      try {
+        const profile = JSON.parse(stored);
+        setRole(profile.role || null);
+      } catch (e) {
+        setRole(null);
+      }
+    }
+  }, []);
 
   // calendar state
   const [currentMonth, setCurrentMonth] = useState(9); // October (0-indexed)
@@ -140,9 +155,20 @@ function Lessons() {
     }
   };
 
-  // when user clicks "Leave Feedback"
+  // when user clicks "Leave Feedback" (student)
   const handleLeaveFeedback = (lesson) => {
     navigate("/feedback", {
+      state: {
+        courseName,
+        lessonTitle: lesson.title,
+        selectedDate,
+      },
+    });
+  };
+
+  // when professor clicks "View Feedback"
+  const handleViewFeedback = (lesson) => {
+    navigate("/professor", {
       state: {
         courseName,
         lessonTitle: lesson.title,
@@ -246,12 +272,25 @@ function Lessons() {
               displayedLessons.map((lesson) => (
                 <div key={lesson.id} className="lessons-list-item">
                   <span className="lessons-list-title">{lesson.title}</span>
-                  <button
-                    className="lessons-feedback-btn"
-                    onClick={() => handleLeaveFeedback(lesson)}
-                  >
-                    Leave Feedback
-                  </button>
+
+                  {/* 🔹 Button varies by role */}
+                  {role === "Student" && (
+                    <button
+                      className="lessons-feedback-btn"
+                      onClick={() => handleLeaveFeedback(lesson)}
+                    >
+                      Leave Feedback
+                    </button>
+                  )}
+
+                  {role === "Professor" && (
+                    <button
+                      className="lessons-feedback-btn"
+                      onClick={() => handleViewFeedback(lesson)}
+                    >
+                      View Feedback
+                    </button>
+                  )}
                 </div>
               ))
             ) : (
