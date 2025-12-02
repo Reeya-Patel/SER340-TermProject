@@ -147,8 +147,8 @@ function Login() {
 
           <p className="login-hint">
             *First time users: select &quot;I'm a first-time user&quot; to
-            receive a temporary password, then update it on the Change Password
-            screen.
+            receive a temporary password, then reset your password by clicking
+            on Forgot Password.
           </p>
         </form>
       </div>

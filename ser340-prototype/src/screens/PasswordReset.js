@@ -121,7 +121,8 @@ function PasswordReset() {
           {/* success message */}
           {saved && (
             <p className="reset-saved">
-              Password updated successfully. You can now continue to the app.
+              Password updated successfully. You can now use your new password
+              to sign in.
             </p>
           )}
 
