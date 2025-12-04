@@ -13,7 +13,7 @@ function Dashboard() {
     }
   }, []);
 
-  // Course data
+  // Course data- hard coded.
   const [courses] = useState([
     {
       id: 1,

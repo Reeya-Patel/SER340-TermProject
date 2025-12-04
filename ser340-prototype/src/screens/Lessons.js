@@ -13,7 +13,7 @@ function Lessons() {
     location.state?.courseName || "Software Engineering"
   );
 
-  // 🔹 role from profile (Student / Professor)
+  // role from profile (Student / Professor)
   const [role, setRole] = useState(null);
 
   useEffect(() => {
@@ -272,19 +272,24 @@ function Lessons() {
               displayedLessons.map((lesson) => {
                 const isLocked = lesson.week > currentWeek;
                 return (
-                  <div key={lesson.id} className={`lessons-list-item ${isLocked ? 'locked' : ''}`}>
+                  <div
+                    key={lesson.id}
+                    className={`lessons-list-item ${isLocked ? "locked" : ""}`}
+                  >
                     <span className="lessons-list-title">
                       {isLocked && <span className="lock-icon">🔒 </span>}
                       {lesson.title}
                     </span>
 
-                    {/* 🔹 Button varies by role */}
+                    {/*  Button varies by role */}
                     {role === "Student" && (
                       <button
                         className="lessons-feedback-btn"
                         onClick={() => handleLeaveFeedback(lesson)}
                         disabled={isLocked}
-                        title={isLocked ? "This lesson hasn't happened yet" : ""}
+                        title={
+                          isLocked ? "This lesson hasn't happened yet" : ""
+                        }
                       >
                         Leave Feedback
                       </button>
@@ -295,7 +300,9 @@ function Lessons() {
                         className="lessons-feedback-btn"
                         onClick={() => handleViewFeedback(lesson)}
                         disabled={isLocked}
-                        title={isLocked ? "This lesson hasn't happened yet" : ""}
+                        title={
+                          isLocked ? "This lesson hasn't happened yet" : ""
+                        }
                       >
                         View Feedback
                       </button>

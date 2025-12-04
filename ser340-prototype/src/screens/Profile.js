@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Profile() {
   const navigate = useNavigate();
 
+  //variables or profile.
   const [name, setName] = useState("");
   const [role, setRole] = useState("None");
   const [department, setDepartment] = useState("None");
@@ -34,6 +35,8 @@ function Profile() {
     if (department === "None") return setError("Please select a department.");
 
     const profileData = { name, role, department, bio };
+
+    //saves profile details to local storage.
     localStorage.setItem("userProfile", JSON.stringify(profileData));
 
     // mark profile as completed
@@ -59,6 +62,7 @@ function Profile() {
         <h1 className="profile-title">Profile Setup</h1>
 
         <form onSubmit={handleSubmit} className="profile-form">
+          {/* name input */}
           <div className="profile-group">
             <label className="profile-label">
               Name:
@@ -71,6 +75,7 @@ function Profile() {
             </label>
           </div>
 
+          {/* role input */}
           <div className="profile-group">
             <label className="profile-label">
               Role:
@@ -79,6 +84,7 @@ function Profile() {
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
               >
+                {/* 3 options- student, professor or none. */}
                 <option value="None">None</option>
                 <option value="Student">Student</option>
                 <option value="Professor">Professor</option>
@@ -86,6 +92,7 @@ function Profile() {
             </label>
           </div>
 
+          {/* department input */}
           <div className="profile-group">
             <label className="profile-label">
               Department:
@@ -94,6 +101,7 @@ function Profile() {
                 value={department}
                 onChange={(e) => setDepartment(e.target.value)}
               >
+                {/* many options- majors. */}
                 <option value="None">None</option>
                 <option value="Biology">Biology</option>
                 <option value="Chemistry">Chemistry</option>
@@ -130,6 +138,7 @@ function Profile() {
             </label>
           </div>
 
+          {/* open text field for users to add a biography */}
           <div className="profile-group">
             <label className="profile-label">
               Biography:
@@ -145,6 +154,7 @@ function Profile() {
           {error && <p className="profile-error">{error}</p>}
           {saved && <p className="profile-saved">Profile saved!</p>}
 
+          {/* save profile button*/}
           <div className="profile-submit-row">
             <button type="submit" className="profile-submit-btn">
               Save Profile

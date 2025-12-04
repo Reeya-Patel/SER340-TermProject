@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function StudentFeedback() {
+  //variables for screen.
   const [understanding, setUnderstanding] = useState("None");
   const [pace, setPace] = useState("");
   const [improvement, setImprovement] = useState("");
@@ -26,12 +27,13 @@ function StudentFeedback() {
           ← Back to course
         </button>
 
+        {/* screen header info */}
         <h1 className="feedback-title">Course Name</h1>
         <p className="feedback-subtitle">Course Code</p>
         <hr className="feedback-divider" />
 
         <form onSubmit={handleSubmit} className="feedback-form">
-          {/* Question 1 */}
+          {/* Question 1- understanding */}
           <div className="feedback-group">
             <label className="feedback-label">
               Was the lesson easy to understand?
@@ -41,6 +43,7 @@ function StudentFeedback() {
               value={understanding}
               onChange={(e) => setUnderstanding(e.target.value)}
             >
+              {/* options for users to select from- drop down. */}
               <option value="None">None</option>
               <option value="Very easy">Very easy</option>
               <option value="Somewhat easy">Somewhat easy</option>
@@ -48,13 +51,14 @@ function StudentFeedback() {
             </select>
           </div>
 
-          {/* Question 2 */}
+          {/* Question 2- pace */}
           <div className="feedback-group">
             <label className="feedback-label">
               Was the lesson&apos;s pace appropriate?
             </label>
 
             <div className="feedback-radio-row">
+              {/* radio button for too fast pace */}
               <label className="feedback-radio">
                 <input
                   type="radio"
@@ -66,6 +70,7 @@ function StudentFeedback() {
                 <span>Too Fast</span>
               </label>
 
+              {/* radio button for just right pace */}
               <label className="feedback-radio">
                 <input
                   type="radio"
@@ -77,6 +82,7 @@ function StudentFeedback() {
                 <span>Just Right</span>
               </label>
 
+              {/* radio button for too slow pace */}
               <label className="feedback-radio">
                 <input
                   type="radio"
@@ -90,11 +96,12 @@ function StudentFeedback() {
             </div>
           </div>
 
-          {/* Question 3 */}
+          {/* Question 3- improvement comments */}
           <div className="feedback-group">
             <label className="feedback-label">
               How can the lesson be improved?
             </label>
+            {/* open ended area for users to input comments  */}
             <textarea
               className="feedback-textarea"
               rows={4}
@@ -103,6 +110,7 @@ function StudentFeedback() {
             />
           </div>
 
+          {/* feedback submission button */}
           <div className="feedback-submit-row">
             <button type="submit" className="feedback-submit-btn">
               Submit feedback
