@@ -127,9 +127,6 @@ function Profile() {
                 <option value="Education">Education</option>
                 <option value="Communications">Communications</option>
                 <option value="Physical Therapy">Physical Therapy</option>
-                <option value="Occupational Therapy">
-                  Occupational Therapy
-                </option>
                 <option value="Radiologic Sciences">Radiologic Sciences</option>
                 <option value="Biomedical Sciences">Biomedical Sciences</option>
                 <option value="Law">Law</option>

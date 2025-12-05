@@ -11,7 +11,7 @@ function ProfessorFeedback() {
     pace: "Just Right",
   };
 
-  //right side of screen: All feedback comments (no tabs)
+  //right side of screen: All feedback comments
   const allFeedback = [
     "The examples helped me understand the concept.",
     "Some parts felt rushed, but overall it was clear.",
@@ -39,7 +39,7 @@ function ProfessorFeedback() {
         <hr className="prof-divider" />
 
         <div className="prof-layout">
-          {/* left side of screen— summary box*/}
+          {/* left side of screen  summary box*/}
           <div className="prof-summary">
             <h2 className="prof-summary-title">Summary</h2>
 
@@ -64,7 +64,7 @@ function ProfessorFeedback() {
             </div>
           </div>
 
-          {/* rigth side of screen — open ended feedback comments display */}
+          {/* rigth side of screen  open ended feedback comments display */}
           <div className="prof-detail">
             <h2 className="prof-summary-title">Feedback Comments</h2>
 

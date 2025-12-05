@@ -46,7 +46,7 @@ function Login() {
       return;
     }
 
-    // FIRST-TIME USERS → go change password
+    // FIRST-TIME USERS  go change password
     if (isFirstTime) {
       navigate("/reset", { state: { email } });
       return;
@@ -57,7 +57,7 @@ function Login() {
     const storedProfile = localStorage.getItem("userProfile");
 
     if (!storedProfile) {
-      // no profile set yet → force them to profile setup
+      // no profile set yet  force them to profile setup
       navigate("/profile");
       return;
     }
