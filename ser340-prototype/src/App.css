@@ -1,3 +1,5 @@
+/* LOGIN PAGE*/
+
 .login-container {
   min-height: 100vh;
   display: flex;
@@ -8,10 +10,10 @@
     sans-serif;
 }
 
-/* card */
+/* main login card */
 .login-card {
   background: #ffffff;
-  padding: 2.5rem 3rem;
+  padding: 40px 48px;
   border-radius: 10px;
   width: 380px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -19,27 +21,27 @@
 
 /* title */
 .login-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 32px;
+  margin-bottom: 24px;
   color: #002b5c;
   font-weight: 700;
 }
 
-/* labels + input */
+/* labels and input */
 .login-label {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   font-weight: 500;
   color: #002b5c;
 }
 
 .login-input {
   width: 100%;
-  padding: 0.55rem;
-  margin-top: 0.25rem;
+  padding: 9px;
+  margin-top: 4px;
   border: 1px solid #b8b8b8;
   border-radius: 6px;
-  font-size: 0.95rem;
+  font-size: 15px;
 }
 
 .login-input:focus {
@@ -48,19 +50,19 @@
   box-shadow: 0 0 0 2px rgba(0, 43, 92, 0.2);
 }
 
-/* error */
+/* error text */
 .login-error {
   color: darkred;
-  font-size: 0.9rem;
-  margin: 0.2rem 0 0.8rem;
+  font-size: 14px;
+  margin: 3px 0 12px;
 }
 
 /* buttons row */
 .login-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: 16px;
+  margin: 16px 0;
 }
 
 /* login button */
@@ -68,7 +70,7 @@
   background: #f9b000;
   color: #002b5c;
   border: none;
-  padding: 0.55rem 1.3rem;
+  padding: 9px 21px;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
@@ -85,60 +87,87 @@
   color: #0056a4;
   text-decoration: underline;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 /* hint text */
 .login-hint {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
+  margin-top: 8px;
+  font-size: 14px;
   color: #444;
 }
 
-/* -------- Student Feedback screen -------- */
+/*  First-Time User checkbox + temp password (login screen) */
+
+.login-first-time-row {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #002b5c;
+}
+
+.login-first-time-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.login-temp-password {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.login-temp-password-value {
+  font-weight: 600;
+  color: #002b5c;
+}
+
+/* STUDENT FEEDBACK PAGE*/
 
 .feedback-card {
   width: 550px;
 }
 
 .feedback-title {
-  font-size: 1.6rem;
-  margin: 0 0 0.25rem;
+  font-size: 26px;
+  margin: 0 0 4px;
   color: #002b5c;
 }
 
 .feedback-subtitle {
   margin: 0;
   color: #555;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .feedback-divider {
-  margin: 1rem 0 1.25rem;
+  margin: 16px 0 20px;
   border: none;
   border-top: 1px solid #ccc;
 }
 
 .feedback-form {
-  font-size: 0.95rem;
+  font-size: 15px;
 }
 
 .feedback-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
 }
 
 .feedback-label {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 6px;
   font-weight: 500;
   color: #222;
 }
 
 .feedback-select {
-  padding: 0.4rem 0.7rem;
+  padding: 6px 11px;
   border-radius: 4px;
   border: 1px solid #b8b8b8;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .feedback-radio-row {
@@ -150,13 +179,13 @@
 .feedback-radio {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.9rem;
+  gap: 6px;
+  font-size: 14px;
 }
 
 .feedback-textarea {
   width: 100%;
-  padding: 0.5rem;
+  padding: 8px;
   border-radius: 4px;
   border: 1px solid #b8b8b8;
   resize: vertical;
@@ -171,7 +200,7 @@
 
 .feedback-submit-row {
   text-align: center;
-  margin-top: 1.25rem;
+  margin-top: 20px;
 }
 
 .feedback-submit-btn {
@@ -179,7 +208,7 @@
   color: #002b5c;
   border: none;
   border-radius: 20px;
-  padding: 0.5rem 1.8rem;
+  padding: 8px 29px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -189,30 +218,30 @@
 }
 
 .feedback-confirm {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
+  margin-top: 12px;
+  font-size: 14px;
   color: #006400;
   text-align: center;
 }
 
-/* -------- Profile Setup screen -------- */
+/* PROFILE SETUP PAGE*/
 
 .profile-card {
   width: 480px;
 }
 
 .profile-title {
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  font-size: 26px;
+  margin-bottom: 24px;
   color: #002b5c;
 }
 
 .profile-form {
-  font-size: 0.95rem;
+  font-size: 15px;
 }
 
 .profile-group {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .profile-label {
@@ -225,11 +254,11 @@
 .profile-select,
 .profile-textarea {
   width: 100%;
-  margin-top: 0.25rem;
-  padding: 0.5rem;
+  margin-top: 4px;
+  padding: 8px;
   border-radius: 6px;
   border: 1px solid #b8b8b8;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .profile-select {
@@ -251,14 +280,14 @@
 
 .profile-submit-row {
   text-align: center;
-  margin-top: 1.25rem;
+  margin-top: 20px;
 }
 
 .profile-submit-btn {
   background: #f9b000;
   color: #002b5c;
   border: none;
-  padding: 0.55rem 1.6rem;
+  padding: 9px 26px;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
@@ -270,43 +299,43 @@
 
 .profile-error {
   color: darkred;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
+  font-size: 14px;
+  margin-top: 4px;
 }
 
 .profile-saved {
   color: #006400;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
+  font-size: 14px;
+  margin-top: 4px;
 }
 
-/* -------- Professor Feedback screen (professor view) -------- */
+/* PROFESSOR FEEDBACK (PROFESSOR VIEW)*/
 
 .prof-card {
   width: 780px;
 }
 
 .prof-title {
-  font-size: 1.7rem;
-  margin: 0 0 0.25rem;
+  font-size: 27px;
+  margin: 0 0 4px;
   color: #002b5c;
 }
 
 .prof-subtitle {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #555;
 }
 
 .prof-divider {
-  margin: 1rem 0 1.25rem;
+  margin: 16px 0 20px;
   border: none;
   border-top: 1px solid #ccc;
 }
 
 .prof-layout {
   display: flex;
-  gap: 2rem;
+  gap: 32px;
 }
 
 /* left summary */
@@ -315,21 +344,21 @@
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 1rem 1.25rem;
+  padding: 16px 20px;
   background: #fafafa;
 }
 
 .prof-summary-title {
   margin-top: 0;
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
+  margin-bottom: 12px;
+  font-size: 16px;
 }
 
 .prof-summary-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.6rem;
-  font-size: 0.9rem;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .prof-summary-value {
@@ -337,7 +366,7 @@
   min-width: 120px;
   border: 1px solid #bbb;
   border-radius: 4px;
-  padding: 0.25rem 0.5rem;
+  padding: 4px 8px;
   background: #fff;
   text-align: right;
 }
@@ -348,7 +377,7 @@
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 0.75rem 0.75rem 1rem;
+  padding: 12px 12px 16px;
   background: #fafafa;
 }
 
@@ -356,17 +385,17 @@
 
 .prof-tabs {
   display: flex;
-  gap: 0.25rem;
-  margin-bottom: 0.75rem;
+  gap: 4px;
+  margin-bottom: 12px;
 }
 
 .prof-tab-btn {
   flex: 1;
-  padding: 0.35rem 0;
+  padding: 6px 0;
   border: 1px solid #bbb;
   border-radius: 4px 4px 0 0;
   background: #eaeaea;
-  font-size: 0.85rem;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -383,32 +412,32 @@
   border-radius: 0 4px 4px 4px;
   background: #fff;
   min-height: 180px;
-  padding: 0.75rem;
+  padding: 12px;
   overflow-y: auto;
 }
 
 .prof-responses-list {
   margin: 0;
-  padding-left: 1.1rem;
-  font-size: 0.9rem;
+  padding-left: 18px;
+  font-size: 14px;
 }
 
 .prof-responses-list li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 6px;
 }
 
 .prof-no-responses {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #555;
 }
 
-/* -------- Course Dashboard Screen -------- */
+/* COURSE DASHBOARD PAGE*/
 
 .dashboard-container {
   min-height: 100vh;
   background: #f5f5f7;
-  padding: 3rem 2rem;
+  padding: 48px 32px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 }
@@ -416,14 +445,14 @@
 /* Header Section */
 .dashboard-header {
   max-width: 1200px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .dashboard-welcome {
-  font-size: 1.8rem;
+  font-size: 29px;
   font-weight: 600;
   color: #002b5c;
   margin: 0;
@@ -450,7 +479,7 @@
 }
 
 .dashboard-profile-icon {
-  font-size: 1.8rem;
+  font-size: 29px;
 }
 
 .dashboard-profile-btn:hover .dashboard-profile-icon {
@@ -461,7 +490,7 @@
 .dashboard-courses-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -471,7 +500,7 @@
   background: white;
   border: 1px solid #d0d0d0;
   border-radius: 10px;
-  padding: 2rem 1.75rem;
+  padding: 32px 28px;
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
@@ -484,26 +513,25 @@
 }
 
 .dashboard-course-name {
-  font-size: 1.15rem;
+  font-size: 18px;
   font-weight: 600;
   color: #002b5c;
-  margin: 0 0 0.75rem;
+  margin: 0 0 12px;
   line-height: 1.4;
 }
 
 .dashboard-course-code {
-  font-size: 0.95rem;
+  font-size: 15px;
   color: #666;
-  margin: 0 0 0.4rem;
+  margin: 0 0 6px;
 }
 
 .dashboard-course-instructor {
-  font-size: 0.95rem;
+  font-size: 15px;
   color: #666;
   margin: 0;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .dashboard-courses-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -512,16 +540,16 @@
 
 @media (max-width: 640px) {
   .dashboard-container {
-    padding: 2rem 1rem;
+    padding: 32px 16px;
   }
 
   .dashboard-courses-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 24px;
   }
 
   .dashboard-welcome {
-    font-size: 1.4rem;
+    font-size: 22px;
   }
 
   .dashboard-profile-btn {
@@ -530,12 +558,12 @@
   }
 }
 
-/* -------- Lessons Screen -------- */
+/* LESSONS PAGE*/
 
 .lessons-container {
   min-height: 100vh;
   background: #f5f5f7;
-  padding: 2rem;
+  padding: 32px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 }
@@ -543,15 +571,15 @@
 /* Course Header */
 .lessons-course-header {
   max-width: 1200px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 24px;
 }
 
 .lessons-course-input {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 12px 16px;
   border: 1px solid #d0d0d0;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
   color: #002b5c;
   background: white;
@@ -562,7 +590,7 @@
 .lessons-layout {
   display: grid;
   grid-template-columns: 350px 1fr;
-  gap: 2rem;
+  gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -572,7 +600,7 @@
   background: white;
   border: 1px solid #d0d0d0;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 24px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   height: fit-content;
 }
@@ -581,16 +609,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
 }
 
 .lessons-month-nav {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 19px;
   color: #002b5c;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: 4px 8px;
   transition: all 0.2s;
 }
 
@@ -600,7 +628,7 @@
 }
 
 .lessons-month-title {
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 600;
   color: #002b5c;
 }
@@ -609,15 +637,15 @@
 .lessons-calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .lessons-weekday {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 14px;
   font-weight: 600;
   color: #002b5c;
-  padding: 0.5rem 0;
+  padding: 8px 0;
 }
 
 .lessons-calendar-day {
@@ -625,7 +653,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #333;
   cursor: pointer;
   border-radius: 4px;
@@ -663,7 +691,7 @@
   background: white;
   border: 1px solid #d0d0d0;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 16px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   max-height: 600px;
   overflow-y: auto;
@@ -673,10 +701,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.25rem;
+  padding: 16px 20px;
   border: 1px solid #d0d0d0;
   border-radius: 6px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
   background: white;
   transition: all 0.2s;
 }
@@ -702,7 +730,7 @@
 }
 
 .lessons-list-title {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
   color: #002b5c;
 }
@@ -713,12 +741,12 @@
 }
 
 .lessons-feedback-btn {
-  padding: 0.5rem 1.25rem;
+  padding: 8px 20px;
   background: white;
   border: 1px solid #002b5c;
   color: #002b5c;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -747,18 +775,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 64px 32px;
   text-align: center;
   color: #666;
 }
 
 .lessons-empty-state p {
   margin: 0.5rem 0;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .lessons-empty-hint {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #999;
 }
 
@@ -785,7 +813,7 @@
 @media (max-width: 1024px) {
   .lessons-layout {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 24px;
   }
 
   .lessons-calendar {
@@ -796,13 +824,13 @@
 
 @media (max-width: 640px) {
   .lessons-container {
-    padding: 1.5rem 1rem;
+    padding: 24px 16px;
   }
 
   .lessons-list-item {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
+    gap: 12px;
   }
 
   .lessons-feedback-btn {
@@ -810,24 +838,23 @@
   }
 }
 
-/* -------- Change Password screen -------- */
-
+/* Change Password / reset page  */
 .reset-card {
   width: 480px;
 }
 
 .reset-title {
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  font-size: 26px;
+  margin-bottom: 24px;
   color: #002b5c;
 }
 
 .reset-form {
-  font-size: 0.95rem;
+  font-size: 15px;
 }
 
 .reset-group {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .reset-label {
@@ -838,11 +865,11 @@
 
 .reset-input {
   width: 100%;
-  margin-top: 0.25rem;
-  padding: 0.5rem;
+  margin-top: 4px;
+  padding: 8px;
   border-radius: 6px;
   border: 1px solid #b8b8b8;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .reset-input:focus {
@@ -852,21 +879,21 @@
 }
 
 .reset-divider {
-  margin: 1rem 0 1rem;
+  margin: 16px 0 16px;
   border: none;
   border-top: 1px solid #ccc;
 }
 
 .reset-submit-row {
   text-align: center;
-  margin-top: 1.25rem;
+  margin-top: 20px;
 }
 
 .reset-submit-btn {
   background: #f9b000;
   color: #002b5c;
   border: none;
-  padding: 0.55rem 1.8rem;
+  padding: 9px 29px;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
@@ -878,48 +905,21 @@
 
 .reset-error {
   color: darkred;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
+  font-size: 14px;
+  margin-top: 4px;
 }
 
 .reset-saved {
   color: #006400;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
-}
-
-/* ---- First-Time User --- */
-
-.login-first-time-row {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-  color: #002b5c;
-}
-
-.login-first-time-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  cursor: pointer;
-}
-
-.login-temp-password {
-  margin-top: 0.35rem;
-  font-size: 0.85rem;
-  color: #444;
-}
-
-.login-temp-password-value {
-  font-weight: 600;
-  color: #002b5c;
+  font-size: 14px;
+  margin-top: 4px;
 }
 
 .reset-back-btn {
   background: #e6e6e6;
   color: #002b5c;
   border: none;
-  padding: 0.55rem 1.8rem;
+  padding: 9px 29px;
   border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
@@ -928,6 +928,8 @@
 .reset-back-btn:hover {
   background: #cccccc;
 }
+
+/* back-to-previous-screen button (used with reset/login) */
 
 .back-button {
   background: none;
